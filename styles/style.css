@@ -9,11 +9,14 @@ html {
 }
 
 .page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -35,4 +38,249 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 399px;
+  column-gap: 30px;
+  align-items: end;
+  inline-size: 100%;
+  margin-top: -24px;
+  padding-inline: 30px;
+}
+
+.title {
+  color: #fff;
+  font-family: Oswald;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 94%; /* 70.5px */
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  flex-grow: 1;
+}
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  row-gap: 26px;
+}
+
+.content__card-link {
+  display: block;
+  padding: 1px;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid transparent;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    border-color: #fff;
+  }
+}
+
+.content__card-link_current {
+  background: #545050;
+}
+
+.content__video-card {
+  display: flex;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content__video-card-title {
+  color: #fff;
+  font-family: Oswald;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+}
+
+.content__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  block-size: 298px;
+  overflow-y: auto;
+}
+
+.button {
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 5px 73px;
+
+  &:active {
+    background: #545050;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 1px solid #fff;
+    outline-offset: 2px;
+  }
+}
+
+.more-button {
+  width: 100%;
+}
+
+.search-form {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  column-gap: 40px;
+}
+
+.search-form__fieldset {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  border: none;
+
+  &:first-child {
+    flex-grow: 1;
+  }
+}
+
+/* .search-form__fieldset:first-of-type {
+  flex-grow: 1;
+} */
+
+.search-form__fieldset-title {
+  color: #fff;
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.search-form__textfield {
+  flex-grow: 1;
+  padding-inline: 1px;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 1px 0;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  appearance: none;
+
+  &:active {
+    padding-inline: 0;
+    border-width: 1px;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.search-form__label {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 5px;
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-weight: 400;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:has(:focus-visible) {
+    outline: 1px solid #fff;
+    outline-offset: 2px;
+  }
+
+  &:has(.search-form__pseudo-checkbox):hover {
+    text-decoration: underline;
+  }
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  column-gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 19px;
+  block-size: 19px;
+  border: 1px solid #fff;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox:before {
+  content: "";
+  display: block;
+  inline-size: 15px;
+  block-size: 15px;
+  background-color: #fff;
+}
+
+.result__video-container {
+  position: relative;
+  block-size: 386px;
+}
+
+.result__video {
+  block-size: 100%;
+  inline-size: 100%;
+  object-fit: cover;
+  object-position: center;
 }
